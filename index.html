@@ -8,14 +8,27 @@
     <body>
         <script>
             // Create computerPlay function 
-            // Initialize integer variable 
-            // Generate random number from 1 to 3 
-            // Assign random number to variable
-            // Create switch statement
-            // If variable is 1, return rock
-            // If variable is 2, return paper
-            // If variable is 3, return scissors
-            // No default case 
+            function computerPlay() {
+                // Initialize integer variable 
+                let randomNum;
+                // Generate random number from 1 to 3 
+                randomNum = Math.floor(Math.random() * 3 + 1);
+                //console.log(randomNum);
+                // Create switch statement
+                switch (randomNum) {
+                    // If variable is 1, return rock
+                    case 1: 
+                        return "rock";
+                    // If variable is 2, return paper
+                    case 2:
+                        return "paper";
+                    // If variable is 3, return scissors
+                    case 3:
+                        return "scissors";
+                    // No default case   
+                }
+            }
+
             
             // Initialize variable computerSelection and assign it the computerPlay function 
             // Initialize playerSelection string variable and assign it user input 
