@@ -31,23 +31,33 @@
 
             // Create playRound function with two parameters, playerSelection and computerSelection 
             function playRound(playerSelection, computerSelection) {
-                console.log(playerSelection);
-                console.log(computerSelection);
+                // Initialize winMessage string variable
+                let winMessage = `You win! ${playerSelection.charAt(0).toUpperCase() + playerSelection.slice(1)} beats ${computerSelection}!`; 
+                // Initialize loseMessage string variable
+                let loseMessage = `You lost! ${computerSelection.charAt(0).toUpperCase() + computerSelection.slice(1)} beats ${playerSelection}!`
                 // Create if-else statement comparing all possible values of playerSelection and computerSelection
+                // Log appropriate message to the console
                 // Return string "win", "lose", "tie"
                 if (playerSelection === computerSelection) {
+                    console.log("You tied the round!");
                     return "tie";
                 } else if (playerSelection === "rock" && computerSelection === "scissors") {
+                    console.log(winMessage);
                     return "win";
                 } else if (playerSelection === "rock" && computerSelection === "paper") {
+                    console.log(loseMessage);
                     return "lose";
                 } else if (playerSelection === "scissors" && computerSelection === "paper") {
+                    console.log(winMessage);
                     return "win";
                 } else if (playerSelection === "scissors" && computerSelection === "rock") {
+                    console.log(loseMessage);
                     return "lose";
                 } else if (playerSelection === "paper" && computerSelection === "scissors") {
+                    console.log(loseMessage);
                     return "lose";
                 } else if (playerSelection === "paper" && computerSelection === "rock") {
+                    console.log(winMessage);
                     return "win";
                 } 
             }
@@ -67,19 +77,13 @@
                     let computerSelection = computerPlay();
                     // create switch statement with playRound() as the expression
                     switch (playRound(playerSelection, computerSelection)) {
-                        // If playRound returns "win", log round winner to console and increment playerScore 
+                        // If playRound returns "win" increment playerScore 
                         case "win":
                             playerScore++;
-                            console.log("You won the round!");
                             break;
-                        // If playRound returns "lose", log round winner to console and increment computerScore
+                        // If playRound returns "lose" increment computerScore
                         case "lose":
                             computerScore++;
-                            console.log("You lost the round!");
-                            break;
-                        // If playRound returns "tie", log round tie to console
-                        case "tie":
-                            console.log("You tied the round!");
                             break;
                     } 
                     // Create if-else statement to check fifth round
