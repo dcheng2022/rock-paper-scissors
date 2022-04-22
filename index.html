@@ -50,26 +50,53 @@
                     return "lose";
                 } else if (playerSelection === "paper" && computerSelection === "scissors") {
                     return "lose";
-                } else (playerSelection === "paper" && computerSelection === "rock") {
+                } else if (playerSelection === "paper" && computerSelection === "rock") {
                     return "win";
                 } 
             }
 
             // Create game function 
-            // Initialize computerScore integer variable
-            // Inititalize playerScore integer variable 
-            // Create for loop inside function to play five rounds 
-            // Call playRound function every loop 
-            // create switch statement 
-            // If playRound returns "win", log round winner to console and increment playerScore 
-            // If playRound returns "lose", log round winner to console and increment computerScore
-            // If playRound reeturns "tie", log round tie to console 
-            // Create if-else statement
-            // Check if i = 4 (fifth round)
-            // Nest if-else statement that compares playerScore and computerScore
-            // If playerScore > computerScore, log "You won the best out of 5!"
-            // If playerScore < computerScore, log "The computer won the best out of 5!"
-            // If playerScore === computerScore, log "No one wins! Try again?"
+            function game() {
+                // Initialize computerScore integer variable
+                let computerScore = 0;
+                // Inititalize playerScore integer variable 
+                let playerScore = 0;
+                // Create for loop inside function to play five rounds 
+                for (let i = 0; i < 5; i++) {
+                    // Call playRound function every loop 
+                    // create switch statement 
+                    switch (playRound()) {
+                        // If playRound returns "win", log round winner to console and increment playerScore 
+                        case "win":
+                            playerScore++;
+                            console.log("You won the round!");
+                            break;
+                        // If playRound returns "lose", log round winner to console and increment computerScore
+                        case "lose":
+                            computerScore++;
+                            console.log("You lost the round!");
+                            break;
+                        // If playRound returns "tie", log round tie to console
+                        case "tie":
+                            console.log("You tied the round!");
+                            break;
+                    } 
+                    // Create if-else statement to check fifth round
+                    if (i === 4) {
+                        // Nest if-else statement that compares playerScore and computerScore
+                        // If playerScore > computerScore, log "You won the best out of 5!"
+                        if (playerScore > computerScore) {
+                            console.log(`You won the best out of 5 by ${playerScore - computerScore} points!`);
+                        // If playerScore < computerScore, log "The computer won the best out of 5!"
+                        } else if (playerScore < computerScore) {
+                            console.log(`You lost the best out of 5 by ${computerScore - playerScore} points!`);
+                        // If playerScore === computerScore, log "No one wins! Try again?"
+                        } else {
+                            console.log("No one wins! Thanks for playing!");
+                        }
+                    }
+                }
+            }
         </script>
     </body>
 </html>
