@@ -28,14 +28,11 @@
                     // No default case   
                 }
             }
-            
-            // Initialize variable computerSelection and assign it the computerPlay function 
-            let computerSelection = computerPlay();
-            // Initialize playerSelection string variable and assign it user input 
-            // Convert user input to lowercase for consistency 
-            let playerSelection = window.prompt("Enter move: ").toLowerCase();
+
             // Create playRound function with two parameters, playerSelection and computerSelection 
             function playRound(playerSelection, computerSelection) {
+                console.log(playerSelection);
+                console.log(computerSelection);
                 // Create if-else statement comparing all possible values of playerSelection and computerSelection
                 // Return string "win", "lose", "tie"
                 if (playerSelection === computerSelection) {
@@ -63,9 +60,13 @@
                 let playerScore = 0;
                 // Create for loop inside function to play five rounds 
                 for (let i = 0; i < 5; i++) {
-                    // Call playRound function every loop 
-                    // create switch statement 
-                    switch (playRound()) {
+                    // Initialize playerSelection string variable and assign it user input 
+                    // Convert user input to lowercase for consistency 
+                    let playerSelection = window.prompt("Enter move: ").toLowerCase();
+                    // Initialize variable computerSelection and assign it the computerPlay function 
+                    let computerSelection = computerPlay();
+                    // create switch statement with playRound() as the expression
+                    switch (playRound(playerSelection, computerSelection)) {
                         // If playRound returns "win", log round winner to console and increment playerScore 
                         case "win":
                             playerScore++;
@@ -86,10 +87,10 @@
                         // Nest if-else statement that compares playerScore and computerScore
                         // If playerScore > computerScore, log "You won the best out of 5!"
                         if (playerScore > computerScore) {
-                            console.log(`You won the best out of 5 by ${playerScore - computerScore} points!`);
+                            console.log(`You won the best out of 5 by ${playerScore - computerScore}!`);
                         // If playerScore < computerScore, log "The computer won the best out of 5!"
                         } else if (playerScore < computerScore) {
-                            console.log(`You lost the best out of 5 by ${computerScore - playerScore} points!`);
+                            console.log(`You lost the best out of 5 by ${computerScore - playerScore}!`);
                         // If playerScore === computerScore, log "No one wins! Try again?"
                         } else {
                             console.log("No one wins! Thanks for playing!");
