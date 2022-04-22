@@ -32,9 +32,9 @@
             // Create playRound function with two parameters, playerSelection and computerSelection 
             function playRound(playerSelection, computerSelection) {
                 // Initialize winMessage string variable
-                let winMessage = `You win! ${playerSelection.charAt(0).toUpperCase() + playerSelection.slice(1)} beats ${computerSelection}!`; 
+                const winMessage = `You win! ${playerSelection.charAt(0).toUpperCase() + playerSelection.slice(1)} beats ${computerSelection}!`; 
                 // Initialize loseMessage string variable
-                let loseMessage = `You lost! ${computerSelection.charAt(0).toUpperCase() + computerSelection.slice(1)} beats ${playerSelection}!`
+                const loseMessage = `You lost! ${computerSelection.charAt(0).toUpperCase() + computerSelection.slice(1)} beats ${playerSelection}!`
                 // Create if-else statement comparing all possible values of playerSelection and computerSelection
                 // Log appropriate message to the console
                 // Return string "win", "lose", "tie"
@@ -72,9 +72,9 @@
                 for (let i = 0; i < 5; i++) {
                     // Initialize playerSelection string variable and assign it user input 
                     // Convert user input to lowercase for consistency 
-                    let playerSelection = window.prompt("Enter move: ").toLowerCase();
+                    const playerSelection = window.prompt("Enter move: ").toLowerCase();
                     // Initialize variable computerSelection and assign it the computerPlay function 
-                    let computerSelection = computerPlay();
+                    const computerSelection = computerPlay();
                     // create switch statement with playRound() as the expression
                     switch (playRound(playerSelection, computerSelection)) {
                         // If playRound returns "win" increment playerScore 
