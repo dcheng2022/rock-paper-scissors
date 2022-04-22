@@ -28,14 +28,32 @@
                     // No default case   
                 }
             }
-
             
             // Initialize variable computerSelection and assign it the computerPlay function 
+            let computerSelection = computerPlay();
             // Initialize playerSelection string variable and assign it user input 
             // Convert user input to lowercase for consistency 
+            let playerSelection = window.prompt("Enter move: ").toLowerCase();
             // Create playRound function with two parameters, playerSelection and computerSelection 
-            // Create if-else statement comparing all possible values of playerSelection and computerSelection
-            // Return string "win", "lose", "tie"
+            function playRound(playerSelection, computerSelection) {
+                // Create if-else statement comparing all possible values of playerSelection and computerSelection
+                // Return string "win", "lose", "tie"
+                if (playerSelection === computerSelection) {
+                    return "tie";
+                } else if (playerSelection === "rock" && computerSelection === "scissors") {
+                    return "win";
+                } else if (playerSelection === "rock" && computerSelection === "paper") {
+                    return "lose";
+                } else if (playerSelection === "scissors" && computerSelection === "paper") {
+                    return "win";
+                } else if (playerSelection === "scissors" && computerSelection === "rock") {
+                    return "lose";
+                } else if (playerSelection === "paper" && computerSelection === "scissors") {
+                    return "lose";
+                } else (playerSelection === "paper" && computerSelection === "rock") {
+                    return "win";
+                } 
+            }
 
             // Create game function 
             // Initialize computerScore integer variable
