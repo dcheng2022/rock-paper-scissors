@@ -85,21 +85,17 @@
                         case "lose":
                             computerScore++;
                             break;
-                    } 
-                    // Create if-else statement to check fifth round
-                    if (i === 4) {
-                        // Nest if-else statement that compares playerScore and computerScore
-                        // If playerScore > computerScore, log "You won the best out of 5!"
-                        if (playerScore > computerScore) {
-                            console.log(`You won the best out of 5 by ${playerScore - computerScore}!`);
-                        // If playerScore < computerScore, log "The computer won the best out of 5!"
-                        } else if (playerScore < computerScore) {
-                            console.log(`You lost the best out of 5 by ${computerScore - playerScore}!`);
-                        // If playerScore === computerScore, log "No one wins! Try again?"
-                        } else {
-                            console.log("No one wins! Thanks for playing!");
-                        }
                     }
+                }
+                // If playerScore > computerScore, log "You won the best out of 5!"
+                if (playerScore > computerScore) {
+                    console.log(`You won the best out of 5 by ${playerScore - computerScore}!`);
+                    // If playerScore < computerScore, log "The computer won the best out of 5!"
+                } else if (playerScore < computerScore) {
+                    console.log(`You lost the best out of 5 by ${computerScore - playerScore}!`);
+                    // If playerScore === computerScore, log "No one wins! Try again?"
+                } else {
+                    console.log("No one wins! Thanks for playing!");
                 }
             }
         </script>
