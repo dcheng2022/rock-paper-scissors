@@ -53,28 +53,6 @@ function playRound(playerSelection, computerSelection) {
     } 
 }
 
-// Create input validation function
-function inputValidation() {
-    // Initialize invildInput boolean variable set to true 
-    let invalidInput = true; 
-    // Create while statement with invalidInput as condition
-    while (invalidInput) {
-        // Initialize playerSelection string variable and assign it user input
-        // Convert user input to lowercase for consistency
-        const playerSelection = window.prompt("Enter your desired move. \nPossible moves include 'rock,' 'paper,' and 'scissors.'").toLowerCase();
-        // Create if-else statement strictly comparing playerSelection to all three possible moves
-        if (playerSelection !== "rock" && playerSelection !== "paper" && playerSelection !== "scissors") {
-            // Alert player that their input is invalid 
-            alert("Your input is invalid. Please only type 'rock,' 'paper,' or 'scissors' into the text box.");
-        } else {
-            // Since input is a valid move, stop while loop by setting invalidInput to false 
-            invalidInput = false;
-            // Return valid player input
-            return playerSelection;
-        }
-    }
-}
-
 // Create game function 
 function game() {
     // Initialize computerScore integer variable
