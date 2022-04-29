@@ -53,43 +53,9 @@ function playRound(playerSelection, computerSelection) {
     } 
 }
 
-// Create game function 
-function game() {
-    // Initialize computerScore integer variable
-    let computerScore = 0;
-    // Inititalize playerScore integer variable 
-    let playerScore = 0;
-    // Create for loop inside function to play five rounds 
-    while (true) {
-        // Initialize local variable playerSelection and assign it the inputValidation function
-        const playerSelection = inputValidation();
-        // Initialize variable computerSelection and assign it the computerPlay function 
-        const computerSelection = computerPlay();
-        // create switch statement with playRound() as the expression
-        switch (playRound(playerSelection, computerSelection)) {
-            // If playRound returns "win" increment playerScore 
-            case "win":
-                playerScore++;
-                break;
-            // If playRound returns "lose" increment computerScore
-            case "lose":
-                computerScore++;
-                break;
-        }
-    }
-    // If playerScore > computerScore, log "You won the best out of 5!"
-    if (playerScore > computerScore) {
-        console.log(`You won the best out of 5 by ${playerScore - computerScore}!`);
-        // If playerScore < computerScore, log "The computer won the best out of 5!"
-    } else if (playerScore < computerScore) {
-        console.log(`You lost the best out of 5 by ${computerScore - playerScore}!`);
-        // If playerScore === computerScore, log "No one wins! Try again?"
-    } else {
-        console.log("No one wins! Thanks for playing!");
-    }
-}
-
-// Alert user that they are about to play a game
-alert('You are about to play a game of rock, paper, scissors against a computer.');
-
-game();
+// Create nodelist for <button> elements and add event listeners
+const buttons = document.querySelectorAll('button'); 
+buttons.forEach(button => { button.addEventListener('click', function(e) {
+    console.log(e);
+})
+});
