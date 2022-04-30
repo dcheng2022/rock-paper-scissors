@@ -3,10 +3,8 @@ let playerScore = 0;
 const buttons = document.querySelectorAll('button'); 
 buttons.forEach(button => button.addEventListener('click', () => scoreCheck(button.id)))
 const body = document.querySelector('body');
-const div = document.createElement('div');
-const scoreDiv = document.createElement('div');
-body.insertBefore(div, buttons[0]);
-body.insertBefore(scoreDiv, div);
+const logDiv = document.querySelector('.log');
+const scoreDiv = document.querySelector('.score');
 
 function computerPlay() { 
     // Generate random number from 1 to 3 
@@ -26,25 +24,25 @@ function playRound(playerSelection, computerSelection) {
     const loseMessage = `You lost! ${computerSelection.charAt(0).toUpperCase() + computerSelection.slice(1)} beats ${playerSelection}!`
     // Return string "win", "lose", "tie"
     if (playerSelection === computerSelection) {
-        div.textContent = "You tied the round!";
+        logDiv.textContent = "You tied the round!";
         return "tie";
     } else if (playerSelection === "rock" && computerSelection === "scissors") {
-        div.textContent = winMessage;
+        logDiv.textContent = winMessage;
         return "win";
     } else if (playerSelection === "rock" && computerSelection === "paper") {
-        div.textContent = loseMessage;
+        logDiv.textContent = loseMessage;
         return "lose";
     } else if (playerSelection === "scissors" && computerSelection === "paper") {
-        div.textContent = winMessage;
+        logDiv.textContent = winMessage;
         return "win";
     } else if (playerSelection === "scissors" && computerSelection === "rock") {
-        div.textContent = loseMessage;
+        logDiv.textContent = loseMessage;
         return "lose";
     } else if (playerSelection === "paper" && computerSelection === "scissors") {
-        div.textContent = loseMessage;
+        logDiv.textContent = loseMessage;
         return "lose";
     } else if (playerSelection === "paper" && computerSelection === "rock") {
-        div.textContent = winMessage;
+        logDiv.textContent = winMessage;
         return "win";
     } 
 }
@@ -62,9 +60,9 @@ function scoreCheck(move) {
     scoreDiv.textContent = `Player:Computer [${playerScore}: ${computerScore}]`;
     if (playerScore === 5 || computerScore === 5) {
         if (playerScore > computerScore) {
-            div.textContent = `You won the best out of 5 by ${playerScore - computerScore}!`;
+            logDiv.textContent = `You won the best out of 5 by ${playerScore - computerScore}!`;
         } else{
-            div.textContent = `You lost the best out of 5 by ${computerScore - playerScore}!`;
+            logDiv.textContent = `You lost the best out of 5 by ${computerScore - playerScore}!`;
         }
     }
 }
