@@ -1,33 +1,19 @@
-// Create computerPlay function 
-function computerPlay() {
-    // Initialize integer variable 
-    let randomNum;
+function computerPlay() { 
     // Generate random number from 1 to 3 
-    randomNum = Math.floor(Math.random() * 3 + 1);
-    //console.log(randomNum);
-    // Create switch statement
+    const = randomNum = Math.floor(Math.random() * 3 + 1);
     switch (randomNum) {
-        // If variable is 1, return rock
         case 1: 
             return "rock";
-        // If variable is 2, return paper
         case 2:
             return "paper";
-        // If variable is 3, return scissors
         case 3:
             return "scissors";
-        // No default case   
     }
 }
 
-// Create playRound function with two parameters, playerSelection and computerSelection 
 function playRound(playerSelection, computerSelection) {
-    // Initialize winMessage string variable
     const winMessage = `You win! ${playerSelection.charAt(0).toUpperCase() + playerSelection.slice(1)} beats ${computerSelection}!`; 
-    // Initialize loseMessage string variable
     const loseMessage = `You lost! ${computerSelection.charAt(0).toUpperCase() + computerSelection.slice(1)} beats ${playerSelection}!`
-    // Create if-else statement comparing all possible values of playerSelection and computerSelection
-    // Log appropriate message to the console
     // Return string "win", "lose", "tie"
     if (playerSelection === computerSelection) {
         div.textContent = "You tied the round!";
