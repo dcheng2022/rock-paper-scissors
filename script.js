@@ -29,22 +29,16 @@ function playRound(playerSelection, computerSelection) {
     } else if (playerSelection === "rock" && computerSelection === "scissors") {
         logDiv.textContent = winMessage;
         return "win";
-    } else if (playerSelection === "rock" && computerSelection === "paper") {
-        logDiv.textContent = loseMessage;
-        return "lose";
     } else if (playerSelection === "scissors" && computerSelection === "paper") {
         logDiv.textContent = winMessage;
         return "win";
-    } else if (playerSelection === "scissors" && computerSelection === "rock") {
-        logDiv.textContent = loseMessage;
-        return "lose";
-    } else if (playerSelection === "paper" && computerSelection === "scissors") {
-        logDiv.textContent = loseMessage;
-        return "lose";
     } else if (playerSelection === "paper" && computerSelection === "rock") {
         logDiv.textContent = winMessage;
         return "win";
-    } 
+    } else {
+        logDiv.textContent = loseMessage;
+        return "lose";
+    }
 }
 
 function scoreCheck(move) {
