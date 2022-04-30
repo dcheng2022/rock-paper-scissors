@@ -1,5 +1,7 @@
 let computerScore = 0;
 let playerScore = 0;
+const buttons = document.querySelectorAll('button'); 
+buttons.forEach(button => button.addEventListener('click', () => scoreCheck(button.id)))
 const body = document.querySelector('body');
 const div = document.createElement('div');
 const scoreDiv = document.createElement('div');
@@ -46,9 +48,6 @@ function playRound(playerSelection, computerSelection) {
         return "win";
     } 
 }
-
-const buttons = document.querySelectorAll('button'); 
-buttons.forEach(button => button.addEventListener('click', () => scoreCheck(button.id)))
 
 function scoreCheck(move) {
     switch(playRound(move, computerPlay())) {
