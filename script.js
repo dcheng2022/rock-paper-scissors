@@ -64,4 +64,6 @@ function scoreCheck(move) {
 
 const body = document.querySelector('body');
 const div = document.createElement('div');
+const scoreDiv = document.createElement('div');
 body.insertBefore(div, buttons[0]);
+body.insertBefore(scoreDiv, div);
