@@ -53,9 +53,25 @@ function playRound(playerSelection, computerSelection) {
     } 
 }
 
-// Create nodelist for <button> elements and add event listeners
+let computerScore = 0;
+let playerScore = 0;
 const buttons = document.querySelectorAll('button'); 
-buttons.forEach(button => { button.addEventListener('click', function(e) {
-    console.log(e);
-})
-});
+buttons.forEach(button => button.addEventListener('click', () => scoreCheck(button.id)))
+
+function scoreCheck(move) {
+    switch(playRound(move, computerPlay())) {
+        case "win": 
+            playerScore++;
+            break;
+        case "lose":
+            computerScore++;
+            break;
+    }
+    if (playerScore === 5 || computerScore === 5) {
+        if (playerScore > computerScore) {
+            console.log(`You won the best out of 5 by ${playerScore - computerScore}!`);
+        } else{
+            console.log(`You lost the best out of 5 by ${computerScore - playerScore}!`);
+        }
+    }
+}
