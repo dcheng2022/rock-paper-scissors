@@ -58,6 +58,7 @@ function scoreCheck(move) {
             computerScore++;
             break;
     }
+    // Also alert asking if user would like to play again (yes, no) then reset scores 
     scoreDiv.textContent = `Player:Computer [${playerScore}: ${computerScore}]`;
     if (playerScore === 5 || computerScore === 5) {
         if (playerScore > computerScore) {
