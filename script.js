@@ -1,3 +1,11 @@
+let computerScore = 0;
+let playerScore = 0;
+const body = document.querySelector('body');
+const div = document.createElement('div');
+const scoreDiv = document.createElement('div');
+body.insertBefore(div, buttons[0]);
+body.insertBefore(scoreDiv, div);
+
 function computerPlay() { 
     // Generate random number from 1 to 3 
     const randomNum = Math.floor(Math.random() * 3 + 1);
@@ -39,8 +47,6 @@ function playRound(playerSelection, computerSelection) {
     } 
 }
 
-let computerScore = 0;
-let playerScore = 0;
 const buttons = document.querySelectorAll('button'); 
 buttons.forEach(button => button.addEventListener('click', () => scoreCheck(button.id)))
 
@@ -62,9 +68,3 @@ function scoreCheck(move) {
         }
     }
 }
-
-const body = document.querySelector('body');
-const div = document.createElement('div');
-const scoreDiv = document.createElement('div');
-body.insertBefore(div, buttons[0]);
-body.insertBefore(scoreDiv, div);
