@@ -1,6 +1,6 @@
 function computerPlay() { 
     // Generate random number from 1 to 3 
-    const = randomNum = Math.floor(Math.random() * 3 + 1);
+    const randomNum = Math.floor(Math.random() * 3 + 1);
     switch (randomNum) {
         case 1: 
             return "rock";
