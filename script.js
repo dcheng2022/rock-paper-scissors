@@ -75,3 +75,7 @@ function scoreCheck(move) {
         }
     }
 }
+
+const body = document.querySelector('body');
+const div = document.createElement('div');
+body.insertBefore(div, buttons[0]);
