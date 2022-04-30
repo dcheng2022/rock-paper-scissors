@@ -30,25 +30,25 @@ function playRound(playerSelection, computerSelection) {
     // Log appropriate message to the console
     // Return string "win", "lose", "tie"
     if (playerSelection === computerSelection) {
-        console.log("You tied the round!");
+        div.textContent = "You tied the round!";
         return "tie";
     } else if (playerSelection === "rock" && computerSelection === "scissors") {
-        console.log(winMessage);
+        div.textContent = winMessage;
         return "win";
     } else if (playerSelection === "rock" && computerSelection === "paper") {
-        console.log(loseMessage);
+        div.textContent = loseMessage;
         return "lose";
     } else if (playerSelection === "scissors" && computerSelection === "paper") {
-        console.log(winMessage);
+        div.textContent = winMessage;
         return "win";
     } else if (playerSelection === "scissors" && computerSelection === "rock") {
-        console.log(loseMessage);
+        div.textContent = loseMessage;
         return "lose";
     } else if (playerSelection === "paper" && computerSelection === "scissors") {
-        console.log(loseMessage);
+        div.textContent = loseMessage;
         return "lose";
     } else if (playerSelection === "paper" && computerSelection === "rock") {
-        console.log(winMessage);
+        div.textContent = winMessage;
         return "win";
     } 
 }
