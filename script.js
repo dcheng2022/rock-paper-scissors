@@ -55,9 +55,9 @@ function scoreCheck(move) {
     }
     if (playerScore === 5 || computerScore === 5) {
         if (playerScore > computerScore) {
-            console.log(`You won the best out of 5 by ${playerScore - computerScore}!`);
+            div.textContent = `You won the best out of 5 by ${playerScore - computerScore}!`;
         } else{
-            console.log(`You lost the best out of 5 by ${computerScore - playerScore}!`);
+            div.textContent = `You lost the best out of 5 by ${computerScore - playerScore}!`;
         }
     }
 }
