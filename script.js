@@ -53,6 +53,7 @@ function scoreCheck(move) {
             computerScore++;
             break;
     }
+    scoreDiv.textContent = `Player:Computer [${playerScore}: ${computerScore}]`;
     if (playerScore === 5 || computerScore === 5) {
         if (playerScore > computerScore) {
             div.textContent = `You won the best out of 5 by ${playerScore - computerScore}!`;
