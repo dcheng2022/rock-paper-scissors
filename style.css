@@ -1,6 +1,7 @@
 body {
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
 }
 
 .hero {
@@ -12,4 +13,13 @@ body {
 .output-container {
     display: flex;
     justify-content: space-between;
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+}
+
+.footer {
+    align-self: center;
 }
