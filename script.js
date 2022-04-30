@@ -53,13 +53,15 @@ function scoreCheck(move) {
         case "tie":
             tieScore++;
     }
-    // Also alert asking if user would like to play again (yes, no) then reset scores 
-    scoreDiv.textContent = `W:L:T [${playerScore}: ${computerScore}: ${tieScore}]`;
     if (playerScore === 5 || computerScore === 5) {
         if (playerScore > computerScore) {
             logDiv.textContent = `You won the best out of 5 by ${playerScore - computerScore} and tied on ${tieScore}!`;
         } else{
             logDiv.textContent = `You lost the best out of 5 by ${computerScore - playerScore} and tied on ${tieScore}!`;
         }
+        playerScore = 0;
+        computerScore = 0;
+        tieScore = 0;
     }
+    scoreDiv.textContent = `W:L:T [${playerScore}: ${computerScore}: ${tieScore}]`;
 }
