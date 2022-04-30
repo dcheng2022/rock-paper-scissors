@@ -21,8 +21,8 @@ function computerPlay() {
 }
 
 function playRound(playerSelection, computerSelection) {
-    const winMessage = `You win! ${playerSelection.charAt(0).toUpperCase() + playerSelection.slice(1)} beats ${computerSelection}!`; 
-    const loseMessage = `You lost! ${computerSelection.charAt(0).toUpperCase() + computerSelection.slice(1)} beats ${playerSelection}!`
+    const winMessage = `You won! ${playerSelection.charAt(0).toUpperCase() + playerSelection.slice(1)} wins against ${computerSelection}.`; 
+    const loseMessage = `You lost! ${playerSelection.charAt(0).toUpperCase() + playerSelection.slice(1)} loses against ${computerSelection}.`;
     // Return string "win", "lose", "tie"
     if (playerSelection === computerSelection) {
         logDiv.textContent = "You tied the round!";
@@ -55,9 +55,9 @@ function scoreCheck(move) {
     }
     if (playerScore === 5 || computerScore === 5) {
         if (playerScore > computerScore) {
-            logDiv.textContent = `You won the best out of 5 by ${playerScore - computerScore} and tied on ${tieScore}!`;
+            logDiv.textContent = `Congrats! You won the best out of 5 by ${playerScore - computerScore} and tied on ${tieScore}.`;
         } else{
-            logDiv.textContent = `You lost the best out of 5 by ${computerScore - playerScore} and tied on ${tieScore}!`;
+            logDiv.textContent = `Better luck next time! You lost the best out of 5 by ${computerScore - playerScore} and tied on ${tieScore}.`;
         }
         playerScore = 0;
         computerScore = 0;
