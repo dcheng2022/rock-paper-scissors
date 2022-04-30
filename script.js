@@ -1,5 +1,6 @@
 let computerScore = 0;
 let playerScore = 0;
+let tieScore = 0;
 const buttons = document.querySelectorAll('button'); 
 buttons.forEach(button => button.addEventListener('click', () => scoreCheck(button.id)))
 const body = document.querySelector('body');
@@ -49,14 +50,16 @@ function scoreCheck(move) {
         case "lose":
             computerScore++;
             break;
+        case "tie":
+            tieScore++;
     }
     // Also alert asking if user would like to play again (yes, no) then reset scores 
-    scoreDiv.textContent = `Player:Computer [${playerScore}: ${computerScore}]`;
+    scoreDiv.textContent = `W:L:T [${playerScore}: ${computerScore}: ${tieScore}]`;
     if (playerScore === 5 || computerScore === 5) {
         if (playerScore > computerScore) {
-            logDiv.textContent = `You won the best out of 5 by ${playerScore - computerScore}!`;
+            logDiv.textContent = `You won the best out of 5 by ${playerScore - computerScore} and tied on ${tieScore}!`;
         } else{
-            logDiv.textContent = `You lost the best out of 5 by ${computerScore - playerScore}!`;
+            logDiv.textContent = `You lost the best out of 5 by ${computerScore - playerScore} and tied on ${tieScore}!`;
         }
     }
 }
