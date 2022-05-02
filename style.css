@@ -17,11 +17,15 @@ img {
 }
 
 .output-container {
+    max-width: 612px;
     display: flex;
+    justify-content: space-between;
 }
 
 .buttons {
+    max-width: 612px;
     display: flex;
+    justify-content: space-between;
 }
 
 .footer {
