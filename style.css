@@ -2,6 +2,7 @@ body {
     display: flex;
     margin: 0px;
     flex-direction: column;
+    min-height: 100vh;
 }
 
 .hero {
@@ -18,4 +19,5 @@ body {
 
 .footer {
     align-self: center;
+    margin-top: auto;
 }
