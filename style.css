@@ -7,6 +7,13 @@ body {
 
 .hero {
     display: flex;
+    flex-direction: column;
+}
+
+img {
+    overflow: hidden;
+    max-width: 612px;
+    flex: 0 1 auto;
 }
 
 .output-container {
