@@ -27,14 +27,7 @@ img {
     justify-content: center;
 }
 
-.outputs {
-    max-width: 612px;
-    flex: 1 1 auto;
-    display: flex;
-    justify-content: space-between;
-}
-
-.buttons {
+.outputs, .buttons {
     max-width: 612px;
     flex: 1 1 auto;
     display: flex;
