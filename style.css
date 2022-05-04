@@ -3,15 +3,20 @@ body {
     margin: 0px;
     flex-direction: column;
     min-height: 100vh;
+    background-color: #37393e;
+    color: #ffffff;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
 .hero {
+    padding: 10px 0px;
     display: flex;
     justify-content: center;
-    /*flex-direction: column;*/
 }
 
 h1 {
+    padding-top: 10px;
+    font-size: 62px;
     margin: 0;
     text-align: center;
 }
@@ -23,6 +28,7 @@ img {
 }
 
 .buttons-container, .outputs-container {
+    padding: 10px 0px;
     display: flex;
     justify-content: center;
 }
@@ -34,7 +40,21 @@ img {
     justify-content: space-between;
 }
 
+.outputs {
+    font-size: 16px;
+}
+
+button {
+    color: #ffffff;
+    border: none;
+    font-size: 30px;
+    background-color: #5866ef;
+    border-radius: 8px;
+    /* add hoverable change to darker purple */
+}
+
 .footer {
     align-self: center;
     margin-top: auto;
+    padding-bottom: 10px;
 }
