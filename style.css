@@ -53,6 +53,11 @@ button {
     /* add hoverable change to darker purple */
 }
 
+button:hover {
+    background-color: #4451be;
+    transition-duration: 0.2s;
+}
+
 .footer {
     align-self: center;
     margin-top: auto;
